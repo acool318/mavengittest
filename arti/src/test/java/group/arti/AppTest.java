@@ -3,8 +3,9 @@ package group.arti;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
 
-import junit.framework.Test;
+
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
@@ -14,7 +15,9 @@ import junit.framework.TestSuite;
 public class AppTest 
     
 {
-	public static void main(String[] args)
+	@Test
+	public void t()
+	
 	{
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Administrator\\Desktop\\chromedriver.exe");
 		WebDriver driver;
