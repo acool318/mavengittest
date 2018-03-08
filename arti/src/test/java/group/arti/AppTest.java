@@ -5,8 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import dataprovider.Testutil;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
@@ -16,15 +19,28 @@ import junit.framework.TestSuite;
 public class AppTest 
     
 {
+	WebDriver driver;
 	Rediff r;
-	@Test
-	public void t()
+	Object[][] data;
+	@DataProvider
+	public Object[][] dp()
+	{
+		Testutil tu = new Testutil();
+		data = tu.getData("C:\\Users\\Administrator\\Desktop\\haww.xlsx","Sheet1");
+		return data;
+	}
+	@BeforeTest
+	public void setUp()
 	
 	{
-		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Administrator\\Downloads\\geckodriver-v0.18.0-win64\\geckodriver.exe");
-		WebDriver driver;
+		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Administrator\\Downloads\\geckodriver-v0.19.1-win64\\geckodriver.exe");
+		
 		driver = new FirefoxDriver();
-		driver.get("http://money.rediff.com/gainers/bsc/daily/groupa?");
-		r = new Rediff(driver);
+		
+	}
+	@Test(dataProvider = "dp")
+	public void t(String u, String p)
+	{
+		System.out.println("u : "+u+"p : "+p);
 	}
 }

@@ -14,13 +14,6 @@ Rediff(WebDriver d)
 		this.driver = d;
 		
 	}
-	@FindBy(xpath = "/html/body/div[1]/div[5]/table")
-	WebElement table;
-	@FindBy(xpath = "/html/body/div[1]/div[5]/table/thead/tr")
-	List<WebElement> li_rows;
-public void printall()
-{
-	PageFactory.initElements(driver, this);
-	System.out.println(li_rows.size());
-}
+
+
 }
