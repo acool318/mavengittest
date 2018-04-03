@@ -22,14 +22,15 @@ public class AppTest
 	WebDriver driver;
 	Rediff r;
 	Object[][] data;
-	@DataProvider
+	/*@DataProvider
 	public Object[][] dp()
 	{
 		Testutil tu = new Testutil();
 		data = tu.getData("C:\\Users\\Administrator\\Desktop\\haww.xlsx","Sheet1");
 		return data;
 	}
-	@BeforeTest
+	
+	*/@BeforeTest
 	public void setUp()
 	
 	{
@@ -38,9 +39,10 @@ public class AppTest
 		driver = new FirefoxDriver();
 		
 	}
-	@Test(dataProvider = "dp")
+	/*@Test(dataProvider = "dp")
 	public void t(String u, String p)
 	{
 		System.out.println("u : "+u+"p : "+p);
 	}
+	*/
 }
