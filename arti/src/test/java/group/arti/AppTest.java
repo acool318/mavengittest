@@ -30,6 +30,7 @@ public class AppTest
 		return data;
 	}
 	
+	*
 	*/@BeforeTest
 	public void setUp()
 	
