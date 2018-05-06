@@ -40,6 +40,12 @@ public class AppTest
 		driver = new FirefoxDriver();
 		
 	}
+	@Test
+	public void test()
+	{
+		driver.get("https://www.google.com");
+		System.out.println(driver.getTitle());
+	}
 	/*@Test(dataProvider = "dp")
 	public void t(String u, String p)
 	{
